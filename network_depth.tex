@@ -1,0 +1,191 @@
+\begin{tikzpicture}[scale=0.7, every node/.style={scale=0.7}]
+    %--------------------%
+    % Parameters
+    %--------------------%
+    \def\layersep{3}
+    \def\ysep{1.7}
+    \def\gap{1.5}
+    \def\circlesize{0.9cm}
+    \def\labelshift{0.75}
+    \def\mypos{0.4}
+    \def\woffset{5}
+
+    %--------------------%
+    % Input Layer
+    %--------------------%
+    \node at (0,2*\ysep+\labelshift) {$g_1^{0}$};
+    \node at (0,1*\ysep+\labelshift) {$g_2^{0}$};
+    \node at (0,0-\gap+\labelshift)  {$g_d^{0}$};
+    \node[draw,circle, minimum size=\circlesize] (x1) at (0,2*\ysep) {$x_1$};
+    \node[draw,circle, minimum size=\circlesize] (x2) at (0,1*\ysep) {$x_2$};
+    \node[draw,circle, minimum size=\circlesize] (xd) at (0,-\gap) {$x_d$};
+    \node (gdp2init) at (0,-2*\ysep-\gap) {\footnotesize $0$};
+
+    %--------------------%
+    % Layer 1
+    %--------------------%
+    % Labels
+    \node at (\layersep,2*\ysep+\labelshift) {$g_1^{1}$};
+    \node at (\layersep,1*\ysep+\labelshift) {$g_2^{1}$};
+    \node at (\layersep,0-\gap+\labelshift)  {$g_d^{1}$};
+    \node at (\layersep+0.2,-1*\ysep-\gap+\labelshift) {$g_{d+1}^{1}$};
+    \node at (\layersep,-2*\ysep-\gap+\labelshift)     {$g_{d+2}^{1}$};
+    % Nodes
+    \node[draw,circle, minimum size=\circlesize] (g1l)   at (\layersep,2*\ysep) {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (g2l)   at (\layersep,1*\ysep) {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (gdl)   at (\layersep,0-\gap)  {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (gdp1l) at (\layersep,-1*\ysep-\gap) {\footnotesize $\sigma$};
+    \node[draw,circle, minimum size=\circlesize] (gdp2l) at (\layersep,-2*\ysep-\gap) {\footnotesize id};
+
+    %--------------------%
+    % Layer 2
+    %--------------------%
+    % Labels
+    \node at (2*\layersep,2*\ysep+\labelshift) {$g_1^{2}$};
+    \node at (2*\layersep,1*\ysep+\labelshift) {$g_2^{2}$};
+    \node at (2*\layersep,0-\gap+\labelshift)  {$g_d^{2}$};
+    \node at (2*\layersep+0.2,-1*\ysep-\gap+\labelshift) {$g_{d+1}^{2}$};
+    \node at (2*\layersep,-2*\ysep-\gap+\labelshift)     {$g_{d+2}^{2}$};
+    % Nodes
+    \node[draw,circle, minimum size=\circlesize] (g1lp)   at (2*\layersep,2*\ysep) {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (g2lp)   at (2*\layersep,1*\ysep) {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (gdlp)   at (2*\layersep,0-\gap)  {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (gdp1lp) at (2*\layersep,-1*\ysep-\gap) {\footnotesize $\sigma$};
+    \node[draw,circle, minimum size=\circlesize] (gdp2lp) at (2*\layersep,-2*\ysep-\gap) {\footnotesize id};
+
+    %--------------------%
+    % Layer 3
+    %--------------------%
+    % Labels
+    \node at (3*\layersep,2*\ysep+\labelshift) {$g_1^{3}$};
+    \node at (3*\layersep,1*\ysep+\labelshift) {$g_2^{3}$};
+    \node at (3*\layersep,0-\gap+\labelshift)  {$g_d^{3}$};
+    \node at (3*\layersep+0.2,-1*\ysep-\gap+\labelshift) {$g_{d+1}^{3}$};
+    \node at (3*\layersep,-2*\ysep-\gap+\labelshift)     {$g_{d+2}^{3}$};
+    % Nodes
+    \node[draw,circle, minimum size=\circlesize] (g1lpp)   at (3*\layersep,2*\ysep) {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (g2lpp)   at (3*\layersep,1*\ysep) {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (gdlpp)   at (3*\layersep,0-\gap)  {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (gdp1lpp) at (3*\layersep,-1*\ysep-\gap) {\footnotesize $\sigma$};
+    \node[draw,circle, minimum size=\circlesize] (gdp2lpp) at (3*\layersep,-2*\ysep-\gap) {\footnotesize id};
+
+    %--------------------%
+    % Layer n-1
+    %--------------------%
+    % Labels
+    \node at (4*\layersep,2*\ysep+\labelshift) {$g_1^{n-1}$};
+    \node at (4*\layersep,1*\ysep+\labelshift) {$g_2^{n-1}$};
+    \node at (4*\layersep,0+\labelshift-\gap)  {$g_d^{n-1}$};
+    \node at (4*\layersep+0.2,-1*\ysep+\labelshift-\gap) {$g_{d+1}^{n-1}$};
+    \node at (4*\layersep,-2*\ysep+\labelshift-\gap)     {$g_{d+2}^{n-1}$};
+    % Nodes
+    \node[draw,circle, minimum size=\circlesize] (g1lppn1)   at (4*\layersep,2*\ysep) {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (g2lppn1)   at (4*\layersep,1*\ysep) {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (gdlppn1)   at (4*\layersep,0-\gap)  {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (gdp1lppn1) at (4*\layersep,-1*\ysep-\gap) {\footnotesize $\sigma$};
+    \node[draw,circle, minimum size=\circlesize] (gdp2lppn1) at (4*\layersep,-2*\ysep-\gap) {\footnotesize id};
+
+    %--------------------%
+    % Layer n
+    %--------------------%
+    % Labels
+    \node at (5*\layersep,2*\ysep+\labelshift) {$g_1^{n}$};
+    \node at (5*\layersep,1*\ysep+\labelshift) {$g_2^{n}$};
+    \node at (5*\layersep,0+\labelshift-\gap)  {$g_d^{n}$};
+    \node at (5*\layersep+0.2,-1*\ysep+\labelshift-\gap) {$g_{d+1}^{n}$};
+    \node at (5*\layersep,-2*\ysep+\labelshift-\gap)     {$g_{d+2}^{n}$};
+    % Nodes
+    \node[draw,circle, minimum size=\circlesize] (g1lppn)   at (5*\layersep,2*\ysep) {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (g2lppn)   at (5*\layersep,1*\ysep) {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (gdlppn)   at (5*\layersep,0-\gap)  {\footnotesize id};
+    \node[draw,circle, minimum size=\circlesize] (gdp1lppn) at (5*\layersep,-1*\ysep-\gap) {\footnotesize $\sigma$};
+    \node[draw,circle, minimum size=\circlesize] (gdp2lppn) at (5*\layersep,-2*\ysep-\gap) {\footnotesize id};
+
+    %--------------------%
+    % Output Layer
+    %--------------------%
+    \node at (6*\layersep,-2+\labelshift-\gap) {};
+    \node[draw,circle, minimum size=\circlesize] (gdpout) at (6*\layersep,-2*\ysep-\gap) {};
+    \draw[->] (gdp1lppn) -- node[above,midway] {$a_{d}$} (gdpout);
+    \draw[->] (gdp2lppn) -- node[above,midway] {1} (gdpout);
+
+    %--------------------%
+    % Connections
+    %--------------------%
+    % Layer 1 computation
+    \draw[->] (x1) -- node[above,pos=\mypos, xshift=\woffset]{$w_{11}$} (gdp1l);
+    \draw[->] (x2) -- node[above,pos=\mypos, xshift=0.5*\woffset]{$w_{21}$} (gdp1l);
+    \draw[->] (xd) -- node[above,pos=\mypos]{$w_{d1}$} (gdp1l);
+
+    % L1 → L2 copy
+    \draw[->] (x1)  -- node[above,midway]{1} (g1l);
+    \draw[->] (x2)  -- node[above,midway]{1} (g2l);
+    \draw[->] (xd)  -- node[above,midway]{1} (gdl);
+    \draw[->] (g1l) -- node[above,midway]{1} (g1lp);
+    \draw[->] (g2l) -- node[above,midway]{1} (g2lp);
+    \draw[->] (gdl) -- node[above,midway]{1} (gdlp);
+
+    % L2 → L3 computation
+    \draw[->] ([xshift=\woffset]g1l) -- node[above,pos=\mypos, xshift=\woffset]{$w_{12}$} (gdp1lp);
+    \draw[->] (g2l) -- node[above,pos=\mypos, xshift=0.5*\woffset]{$w_{22}$} (gdp1lp);
+    \draw[->] (gdl) -- node[above,pos=\mypos]{$w_{d2}$} (gdp1lp);
+
+    % L2 → L3 copy
+    \draw[->] (g1lp) -- node[above,midway]{1} (g1lpp);
+    \draw[->] (g2lp) -- node[above,midway]{1} (g2lpp);
+    \draw[->] (gdlp) -- node[above,midway]{1} (gdlpp);
+
+    % L3 computation
+    \draw[->] ([xshift=\woffset]g1lp)  -- node[above,pos=\mypos, xshift=\woffset]{$w_{13}$} (gdp1lpp);
+    \draw[->] (g2lp)  -- node[above,pos=\mypos, xshift=0.5*\woffset]{$w_{23}$} (gdp1lpp);
+    \draw[->] (gdlp)  -- node[above,pos=\mypos]{$w_{d3}$} (gdp1lpp);
+
+    % L3 → L(n-1): NO connections
+
+    % L(n-1) → L(n) copy
+    \draw[->] (g1lppn1) -- node[above,midway]{1} (g1lppn);
+    \draw[->] (g2lppn1) -- node[above,midway]{1} (g2lppn);
+    \draw[->] (gdlppn1) -- node[above,midway]{1} (gdlppn);
+
+    % L(n) computation
+    \draw[->] ([xshift=\woffset]g1lppn1) -- node[above,pos=\mypos, xshift=\woffset]{$w_{1,n}$} (gdp1lppn);
+    \draw[->] (g2lppn1) -- node[above,pos=\mypos, xshift=0.5*\woffset]{$w_{2,n}$} (gdp1lppn);
+    \draw[->] (gdlppn1) -- node[above,pos=\mypos]{$w_{d,n}$} (gdp1lppn);
+
+    % Arrows from computation to next layer out-register
+    \draw[->] (gdp1l) -- node[above,midway] {$a_{1}$} (gdp2lp);
+    \draw[->] (gdp1lp) -- node[above,midway] {$a_{2}$} (gdp2lpp);
+    \draw[->] (gdp1lppn1) -- node[above,midway] {$a_{d-1}$} (gdp2lppn);
+
+    % Arrows from out register next layer out-register
+    \draw[->] (gdp2init) -- node[above,midway] {0} (gdp2l);
+    \draw[->] (gdp2l) -- node[above,midway] {1} (gdp2lp);
+    \draw[->] (gdp2lp) -- node[above,midway] {1} (gdp2lpp);
+    \draw[->] (gdp2lppn1) -- node[above,midway] {1} (gdp2lppn);
+
+    %--------------------%
+    % Dots and Layer Labels
+    %--------------------%
+    \node at ($(x2)!0.4!(xd)$) {\large\textbf{$\vdots$}};
+    \node at ($(g2l)!0.4!(gdl)$) {\large\textbf{$\vdots$}};
+    \node at ($(g2lp)!0.4!(gdlp)$) {\large\textbf{$\vdots$}};
+    \node at ($(g2lpp)!0.4!(gdlpp)$) {\large\textbf{$\vdots$}};
+    \node at ($(g2lppn1)!0.4!(gdlppn1)$) {\large\textbf{$\vdots$}};
+    \node at ($(g2lppn)!0.4!(gdlppn)$) {\large\textbf{$\vdots$}};
+
+    \node at ($(g1lpp)!0.46!(gdp1lppn1)$) {\large\textbf{$\ddots$}};
+
+    \node at ($(g1lpp)!0.5!(g1lppn1)$)   {\large\textbf{$\cdots$}};
+    \node at ($(g2lpp)!0.5!(g2lppn1)$)   {\large\textbf{$\cdots$}};
+    \node at ($(gdlpp)!0.5!(gdlppn1)$)   {\large\textbf{$\cdots$}};
+    \node at ($(gdp1lpp)!0.5!(gdp1lppn1)$) {\large\textbf{$\cdots$}};
+    \node at ($(gdp2lpp)!0.5!(gdp2lppn1)$) {\large\textbf{$\cdots$}};
+
+    \node at (0*\layersep,2.7*\ysep) {\textbf{Input Layer}};
+    \node at (\layersep,2.7*\ysep) {\textbf{Hidden 1}};
+    \node at (2*\layersep,2.7*\ysep) {\textbf{Hidden 2}};
+    \node at (3*\layersep,2.7*\ysep) {\textbf{Hidden 3}};
+    \node at (4*\layersep,2.7*\ysep) {\textbf{Hidden n-1}};
+    \node at (5*\layersep,2.7*\ysep) {\textbf{Hidden n}};
+    \node at (6*\layersep,2.7*\ysep) {\textbf{Output Layer}};
+\end{tikzpicture}
